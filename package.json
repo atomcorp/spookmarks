@@ -1,0 +1,15 @@
+{
+  "name": "bookmarks",
+  "version": "1.0.0",
+  "description": "A simple bookmarking app for saving links",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  }
+}
