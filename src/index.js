@@ -1,7 +1,7 @@
 import './styles.scss';
 /**
  * Creates an element and styles it
- * @return {HTMLElement}
+ * @return {!Element}
  */
 function component() {
   const element = document.createElement('div');
