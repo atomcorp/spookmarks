@@ -1,0 +1,15 @@
+Tasks:
+  List:
+    ☐ Show link, use title
+    ☐ Pagination (20 per page)
+  Form:
+    ☐ Input url
+      ☐ On blur checks if valid?
+    ☐ Input title (optional?)
+    ☐ Submit button
+      ☐ On Submit checks if valid?    
+    ☐ 
+  Submit page:
+    ☐ Different "page"
+    ☐ Shows inputted url (and title)
+    ☐ Shows thank you (and gif?)

@@ -1,6 +1,12 @@
+import './styles.scss';
+/**
+ * Creates an element and styles it
+ * @return {HTMLElement}
+ */
 function component() {
-  var element = document.createElement('div');
+  const element = document.createElement('div');
   element.innerHTML = 'Hello world!';
+  element.classList.add('hello');
   return element;
 }
 
