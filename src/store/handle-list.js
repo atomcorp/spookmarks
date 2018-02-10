@@ -1,9 +1,14 @@
-import shortid from 'shortid';
-
 /*
   Mathods for managing the list of links
   within the store
-/*
+*/
+import shortid from 'shortid';
+import {
+  ADD_TO_LIST, 
+  REMOVE_FROM_LIST,
+  EDIT_IN_LIST
+} from './types.js'
+
 
 /**
  * Add an object from array
@@ -53,6 +58,27 @@ export const linkItem = ({ name, link }) => {
   };
 };
 
+export const editItemInList = (
+  list, 
+  {name, link, id}
+) => {
+  return list.map((item) => {
+    if (item.id === id) {
+      return Object.assign(
+        {},
+        item,
+        {
+          name,
+          link,
+          id,
+          edited: Date.now(),
+        }
+      );
+    }
+    return item;
+  });
+};
+
 // update and return just the list
 // add or remove
 /**
@@ -64,13 +90,15 @@ export const linkItem = ({ name, link }) => {
  */
 export const listHandler = (action, item, list) => {
   switch (action) {
-    case 'ADD_TO_LIST':
+    case ADD_TO_LIST:
       return addToList(
         linkItem(item),
         list
       );
-    case 'REMOVE_FROM_LIST':
+    case REMOVE_FROM_LIST:
       return removeFromList(item, list);
+    case EDIT_IN_LIST:
+      return editItemInList(item, list);
     default:
       return list;
   }
