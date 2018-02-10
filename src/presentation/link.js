@@ -3,11 +3,35 @@
  * @param {{title: string, link: string, id: number}} { title, link, id }
  * @return {Element}
  */
-export const link = ({ name, link, id }) => {
-  const linkDiv = document.createElement('a');
-  linkDiv.classList.add('link');
-  linkDiv.innerText = name;
-  linkDiv.href = link;
-  linkDiv.dataset.id = id;
-  return linkDiv;
+const linkElement = ({ name, link, id }) => {
+  const a = document.createElement('a');
+  a.classList.add('link__a');
+  a.innerText = name;
+  a.href = link;
+  a.dataset.id = id;
+  return a;
 };
+
+const deleteElement = () => {
+  const div = document.createElement('div');
+  div.classList.add('link__delete', 'js--delete');
+  div.innerText = 'X';
+  return div;
+};
+
+// make container with close icon
+const linkContainer = (linkElement, deleteElement) => {
+  const div = document.createElement('div');
+  div.classList.add('link');
+  div.appendChild(linkElement);
+  div.appendChild(deleteElement);
+  return div;
+};
+
+export const link = (linkValues) => {
+  return linkContainer(
+    linkElement(linkValues),
+    deleteElement()
+  );
+}
+

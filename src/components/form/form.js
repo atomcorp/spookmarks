@@ -8,13 +8,12 @@ const link = form.querySelector('.js--link');
 
 const handleSubmit = (e) => {
   e.preventDefault();
-  // TODO: refactor this out
-  //       add validation
+  // TODO: add validation
   store.updateList(ADD_TO_LIST, {
     name: title.value,
     link: link.value,
   });
-  console.log(store.access());
+  // TODO: head to new page
   updateItems(store.access().list);
 };
 

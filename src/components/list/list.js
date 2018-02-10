@@ -22,4 +22,6 @@ const clearItems = () => {
   }
 };
 
+list.addEventListener('click', null);
+
 export const updateItems = appendItems;
