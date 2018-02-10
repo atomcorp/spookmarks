@@ -22,9 +22,6 @@ export const addToList = (item, list = []) => {
  * @return {!Array}
  */
 export const removeFromList = (idToRemove, list) => {
-  if (idToRemove !== Number(idToRemove)) {
-    throw new Error('ID Must be a number');
-  }
   if (!list) {
     throw new Error('Include the list!');
   }

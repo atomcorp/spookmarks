@@ -1,5 +1,8 @@
 Tasks:
   ☐ need to give appendItems exactly what list items to show 
+  ☐ refactor submit handler so it can do all the jobs that will get thrown at it
+  ☐ validation
+  ☐ why is he order odd when adding items?
   List:
     ☐ Show link, use title
     ☐ Pagination (20 per page)

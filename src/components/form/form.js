@@ -1,5 +1,5 @@
 import { store } from '../../store/store.js';
-import { 
+import {
   addToList, linkItem,
 } from '../../store/handle-list.js';
 import { updateItems } from '../list/list.js';
@@ -21,13 +21,14 @@ const handleSubmit = (e) => {
           linkItem({
             name: title.value,
             link: link.value,
-          }), 
+          }),
           store.access().list
         ),
       }
     )
   );
   updateItems(store.access().list);
+  console.log(store.access())
 };
 
 form.addEventListener('submit',
