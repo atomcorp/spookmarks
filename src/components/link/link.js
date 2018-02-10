@@ -12,27 +12,41 @@ const linkElement = ({ name, link, id }) => {
   return a;
 };
 
-const deleteElement = (id) => {
+const deleteButton = (id) => {
   const div = document.createElement('div');
   div.classList.add('link__delete', 'js--delete');
-  div.innerText = 'X';
+  div.innerText = '🗙';
   div.dataset.id = id;
   return div;
 };
 
+const editButton = (id) => {
+  const div = document.createElement('div');
+  div.classList.add('link__edit', 'js--edit');
+  div.innerText = '✎';
+  div.dataset.id = id;
+  return div;
+}
+
 // make container with close icon
-const linkContainer = (linkElement, deleteElement) => {
+const linkContainer = (
+  linkElement, 
+  deleteButton,
+  editButton
+) => {
   const div = document.createElement('div');
   div.classList.add('link');
   div.appendChild(linkElement);
-  div.appendChild(deleteElement);
+  div.appendChild(deleteButton);
+  div.appendChild(editButton);
   return div;
 };
 
 export const link = (linkValues) => {
   return linkContainer(
     linkElement(linkValues),
-    deleteElement(linkValues.id)
+    deleteButton(linkValues.id),
+    editButton(linkValues.id)
   );
 }
 

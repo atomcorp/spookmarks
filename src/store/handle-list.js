@@ -59,9 +59,10 @@ export const linkItem = ({ name, link }) => {
 };
 
 export const editItemInList = (
-  list, 
-  {name, link, id}
+  {name, link, id},
+  list
 ) => {
+  console.log({ name, link, id }, list)
   return list.map((item) => {
     if (item.id === id) {
       return Object.assign(

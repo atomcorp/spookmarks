@@ -2,8 +2,11 @@
   Add link items to the list
 */
 import { store } from '../../store/store.js';
-import { REMOVE_FROM_LIST } from '../../store/types.js';
-import { link } from '../../presentation/link.js';
+import { 
+  REMOVE_FROM_LIST,
+  EDIT_IN_LIST,
+ } from '../../store/types.js';
+import { link } from '../link/link.js';
 import {
   setStoreToStorage,
 } from '../../store/browser-storage.js';
@@ -28,11 +31,18 @@ const clearItems = () => {
 };
 
 list.addEventListener('click', (e) => {
+  // TODO: probably needs a refactor
   if (e.target.classList.contains('js--delete')) {
     const item = store.getItemFromList(
       e.target.dataset.id
     );
     store.updateList(REMOVE_FROM_LIST, item);
+  } else if (e.target.classList.contains('js--edit')) {
+    // add edit field
+    const item = store.getItemFromList(
+      e.target.dataset.id
+    );
+    store.updateList(EDIT_IN_LIST, item);
   }
   updateList(store.access().list);
   setStoreToStorage(store.access());

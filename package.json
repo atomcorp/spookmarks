@@ -1,5 +1,5 @@
 {
-  "name": "bookmarks",
+  "name": "spookmarks",
   "version": "1.0.0",
   "description": "A simple bookmarking app for saving links",
   "main": "index.js",
