@@ -16,7 +16,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'Added',
-      filename: 'added.html',
+      filename: 'added/index.html',
       template: './src/templates/added.html'
     })
   ],
