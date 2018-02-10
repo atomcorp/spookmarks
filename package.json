@@ -4,7 +4,7 @@
   "description": "A simple bookmarking app for saving links",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
@@ -18,6 +18,7 @@
     "eslint-config-google": "^0.9.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^2.30.1",
+    "jest": "^22.2.2",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.20.1",
@@ -27,6 +28,7 @@
   },
   "eslintIgnore": [
     "webpack.*",
-    "public"
+    "public",
+    "*.test.js"
   ]
 }
