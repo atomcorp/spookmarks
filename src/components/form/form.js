@@ -1,6 +1,6 @@
 import { store } from '../../store/store.js';
 import { ADD_TO_LIST } from '../../store/types.js';
-import { updateItems } from '../list/list.js';
+import { updateList } from '../list/list.js';
 
 const form = document.querySelector('.form');
 const title = form.querySelector('.js--title');
@@ -14,7 +14,7 @@ const handleSubmit = (e) => {
     link: link.value,
   });
   // TODO: head to new page
-  updateItems(store.access().list);
+  updateList(store.access().list);
 };
 
 form.addEventListener('submit',

@@ -32,7 +32,7 @@ list.addEventListener('click', (e) => {
     );
     store.updateList(REMOVE_FROM_LIST, item);
   }
-  updateItems(store.access().list);
+  updateList(store.access().list);
 });
 
-export const updateItems = appendItems;
+export const updateList = appendItems;
