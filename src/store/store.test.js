@@ -1,4 +1,6 @@
-import { addToList, removeFromList } from './store.js';
+import { 
+  addToList, removeFromList 
+} from './handle-list.js';
 
 const store = [
   {

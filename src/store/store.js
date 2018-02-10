@@ -1,6 +1,5 @@
-import shortid from 'shortid';
 
-export const store = {
+const storeTemp = {
   list: [
     {
       name: 'Google',
@@ -16,42 +15,19 @@ export const store = {
   page: 1,
 };
 
-/**
- * Add an object from array
- * @param {!object} item
- * @param {!object} list
- * @return {!Array}
- */
-export const addToList = (item, list) => {
-  return [...list, item];
-};
+const storeHandler = ((data = storeTemp) => {
+  let store = data;
+  const update = (newStore) => {
+    // TODO: add a check for list or page etc
+    store = Object.assign({}, store, newStore);
+  };
+  const access = () => {
+    return store;
+  };
+  return {
+    update: update,
+    access: access,
+  };
+})();
 
-/**
- * Remove an object from array
- * @param {!number} idToRemove
- * @param {!{name: string, link: string, id: number}} list
- * @return {!Array}
- */
-export const removeFromList = (idToRemove, list) => {
-  if (idToRemove !== Number(idToRemove)) {
-    throw new Error('ID Must be a number');
-  }
-  if (!list) {
-    throw new Error('Include the list!');
-  }
-  return list.reduce((acc, link) => {
-    if (link.id !== idToRemove) {
-      return [...acc, link];
-    }
-    return acc;
-  }, []);
-};
-
-/**
- *
- * @param {{name: string, link: string}} item
- * @return {!{name: string, link: string, id: number}}
- */
-export const linkItem = ({name, link}) => {
-  return { name, link, id: shortid.generate() };
-};
+export const store = storeHandler;
