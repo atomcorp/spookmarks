@@ -45,7 +45,12 @@ export const getFromList = (id, list) => {
  * @return {!{name: string, link: string, id: number}}
  */
 export const linkItem = ({ name, link }) => {
-  return { name, link, id: shortid.generate() };
+  return {
+    name,
+    link,
+    id: shortid.generate(),
+    created: Date.now()
+  };
 };
 
 // update and return just the list
