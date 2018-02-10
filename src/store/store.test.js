@@ -1,4 +1,5 @@
-import addToStore from '.store.js';
+import { addToStore, removeFromStore } from './store.js';
+
 const store = [
   {
     name: 'Google',
@@ -26,6 +27,8 @@ const newStore = [
   }
 ]; 
 
-test('add to store', () => {
-  expect(addToStore(item)).toEqual(newStore);
+test('add and remove from store', () => {
+  const addSomething = addToStore(item, store);
+  expect(addSomething).toEqual(newStore);
+  expect(removeFromStore(2, addSomething)).toEqual(store);
 })
