@@ -1,12 +1,17 @@
 import { 
   listHandler, getFromList,
 } from './handle-list.js';
-import initialData from './initial-data.js'; 
+import initialData from './initial-data.js';
+import {
+  getStoreFromStorage,
+} from './browser-storage.js';
 
-const storeHandler = ((data = initialData) => {
+const storeHandler = (data = initialData) => {
   let store = data;
   const updateList = (action, item) => {
-    store.list = listHandler(action, item, store.list);
+    store.list = listHandler(
+      action, item, store.list
+    );
   };
   const updatePage = (action, page) => {
     // do stuff
@@ -23,6 +28,6 @@ const storeHandler = ((data = initialData) => {
     access: access,
     getItemFromList: getItemFromList,
   };
-})();
-
-export const store = storeHandler;
+};
+const currentStorage = getStoreFromStorage();
+export const store = storeHandler(currentStorage);

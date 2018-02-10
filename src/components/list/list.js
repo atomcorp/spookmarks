@@ -2,9 +2,11 @@
   Add link items to the list
 */
 import { store } from '../../store/store.js';
-import { listHandler } from '../../store/handle-list.js';
 import { REMOVE_FROM_LIST } from '../../store/types.js';
 import { link } from '../../presentation/link.js';
+import {
+  setStoreToStorage,
+} from '../../store/browser-storage.js';
 
 const list = document.querySelector('.js--list');
 
@@ -33,6 +35,7 @@ list.addEventListener('click', (e) => {
     store.updateList(REMOVE_FROM_LIST, item);
   }
   updateList(store.access().list);
+  setStoreToStorage(store.access());
 });
 
 export const updateList = appendItems;

@@ -2,14 +2,15 @@ Tasks:
   ☐ need to give appendItems exactly what list items to show 
   ☐ refactor submit handler so it can do all the jobs that will get thrown at it
   ☐ validation
-  ☐ why is he order odd when adding items?
+  ✔ why is he order odd when adding items? @done(18-02-10 19:11)
+  ☐ have to add a way to set default page number when using store
   List:
     ☐ Show link, use title
     ☐ Pagination (20 per page)
   Form:
     ☐ Input url
-      ☐ On blur checks if valid?
-    ☐ Input title (optional?)
+      ✘ On blur checks if valid? @cancelled(18-02-10 20:57)
+    ✔ Input title (optional?) @done(18-02-10 20:57)
     ☐ Submit button
       ☐ On Submit checks if valid    
     ☐ 
@@ -31,4 +32,5 @@ Ideas:
   ☐ Keep form persistent on scroll (or at least in reach, with a button)
   ☐ Little link animation when you make a new bookmark
   https://material.io/icons/#ic_link 
+  ☐ Whatever origin (http://www.whateverorigin.org/)
 
