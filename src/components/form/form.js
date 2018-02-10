@@ -1,7 +1,5 @@
 import { store } from '../../store/store.js';
-import {
-  addToList, linkItem,
-} from '../../store/handle-list.js';
+import { ADD_TO_LIST } from '../../store/types.js';
 import { updateItems } from '../list/list.js';
 
 const form = document.querySelector('.form');
@@ -12,23 +10,12 @@ const handleSubmit = (e) => {
   e.preventDefault();
   // TODO: refactor this out
   //       add validation
-  store.update(
-    Object.assign(
-      {},
-      store.access(),
-      {
-        list: addToList(
-          linkItem({
-            name: title.value,
-            link: link.value,
-          }),
-          store.access().list
-        ),
-      }
-    )
-  );
+  store.updateList(ADD_TO_LIST, {
+    name: title.value,
+    link: link.value,
+  });
+  console.log(store.access());
   updateItems(store.access().list);
-  console.log(store.access())
 };
 
 form.addEventListener('submit',

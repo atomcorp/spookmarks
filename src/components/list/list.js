@@ -9,7 +9,7 @@ const list = document.querySelector('.js--list');
 const appendItems = (items = []) => {
   clearItems();
   // reverse so newer go first
-  items.reverse().forEach((item) => {
+  items.forEach((item) => {
     list.appendChild(link(item));
   });
 };

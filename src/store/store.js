@@ -1,31 +1,21 @@
+import { listHandler } from './handle-list.js';
+import initialData from './initial-data.js'; 
 
-const storeTemp = {
-  list: [
-    {
-      name: 'Google',
-      link: 'https://www.google.co.uk/',
-      id: 1,
-    },
-    {
-      name: 'The Guardian',
-      link: 'https://www.theguardian.com/uk',
-      id: 2,
-    },
-  ],
-  page: 1,
-};
-
-const storeHandler = ((data = storeTemp) => {
+const storeHandler = ((data = initialData) => {
   let store = data;
-  const update = (newStore) => {
+  const updateList = (action, item) => {
     // TODO: add a check for list or page etc
-    store = Object.assign({}, store, newStore);
+    store.list = listHandler(action, item, store.list);
+  };
+  const updatePage = (action, page) => {
+    // do stuff
   };
   const access = () => {
     return store;
   };
   return {
-    update: update,
+    updateList: updateList,
+    updatePage: updatePage,
     access: access,
   };
 })();
