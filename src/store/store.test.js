@@ -1,4 +1,4 @@
-import { addToStore, removeFromStore } from './store.js';
+import { addToList, removeFromList } from './store.js';
 
 const store = [
   {
@@ -28,7 +28,7 @@ const newStore = [
 ]; 
 
 test('add and remove from store', () => {
-  const addSomething = addToStore(item, store);
+  const addSomething = addToList(item, store);
   expect(addSomething).toEqual(newStore);
-  expect(removeFromStore(2, addSomething)).toEqual(store);
+  expect(removeFromList(2, addSomething)).toEqual(store);
 })

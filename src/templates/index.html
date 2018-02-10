@@ -3,7 +3,9 @@
 <title>
   <%= htmlWebpackPlugin.options.title %>
 </title>
-<form>
-  <input type="text" placeholder="Add a link!">
-  <input type="submit" value="Go">
+<form class="form js--form">
+  <input class="js--title" type="text" placeholder="Add a Title!">
+  <input class="js--link"type="text" placeholder="Add a link!">
+  <input class="form__button" type="submit" value="Add">
 </form>
+<div class="js--list"></div>
