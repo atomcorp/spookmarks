@@ -1,14 +1,18 @@
-import { listHandler } from './handle-list.js';
+import { 
+  listHandler, getFromList,
+} from './handle-list.js';
 import initialData from './initial-data.js'; 
 
 const storeHandler = ((data = initialData) => {
   let store = data;
   const updateList = (action, item) => {
-    // TODO: add a check for list or page etc
     store.list = listHandler(action, item, store.list);
   };
   const updatePage = (action, page) => {
     // do stuff
+  };
+  const getItemFromList = (id) => {
+    return getFromList(id, store.list);
   };
   const access = () => {
     return store;
@@ -17,6 +21,7 @@ const storeHandler = ((data = initialData) => {
     updateList: updateList,
     updatePage: updatePage,
     access: access,
+    getItemFromList: getItemFromList,
   };
 })();
 

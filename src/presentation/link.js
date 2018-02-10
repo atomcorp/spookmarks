@@ -12,10 +12,11 @@ const linkElement = ({ name, link, id }) => {
   return a;
 };
 
-const deleteElement = () => {
+const deleteElement = (id) => {
   const div = document.createElement('div');
   div.classList.add('link__delete', 'js--delete');
   div.innerText = 'X';
+  div.dataset.id = id;
   return div;
 };
 
@@ -31,7 +32,7 @@ const linkContainer = (linkElement, deleteElement) => {
 export const link = (linkValues) => {
   return linkContainer(
     linkElement(linkValues),
-    deleteElement()
+    deleteElement(linkValues.id)
   );
 }
 

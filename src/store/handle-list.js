@@ -33,6 +33,12 @@ export const removeFromList = ({id}, list) => {
   }, []);
 };
 
+export const getFromList = (id, list) => {
+  return list.find((item) => {
+    return item.id === id;
+  });
+};
+
 /**
  * Adds id to item
  * @param {{name: string, link: string}} item
