@@ -7,9 +7,24 @@ Tasks:
       ☐ On blur checks if valid?
     ☐ Input title (optional?)
     ☐ Submit button
-      ☐ On Submit checks if valid?    
+      ☐ On Submit checks if valid    
     ☐ 
   Submit page:
     ☐ Different "page"
     ☐ Shows inputted url (and title)
     ☐ Shows thank you (and gif?)
+
+Possibly:
+  - Static site generator 
+    add paths to generate different pages?
+    https://github.com/markdalgleish/static-site-generator-webpack-plugin
+
+Inspiration:
+  - Roboto, big type
+    https://design.google/span2017/#
+
+Ideas: 
+  ☐ Keep form persistent on scroll (or at least in reach, with a button)
+  ☐ Little link animation when you make a new bookmark
+  https://material.io/icons/#ic_link 
+

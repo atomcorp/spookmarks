@@ -13,6 +13,7 @@
   },
   "extends": ["eslint:recommended", "google"],
   "rules": {
-    "linebreak-style": ["error", "windows"]
+    "linebreak-style": 0,
+    "object-curly-spacing": 0
   }
 }

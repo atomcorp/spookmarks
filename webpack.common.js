@@ -3,22 +3,28 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "public")
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'public')
   },
   plugins: [
-    new CleanWebpackPlugin(["public"]),
+    new CleanWebpackPlugin(['public']),
     new HtmlWebpackPlugin({
-      title: "Bookmark"
+      title: 'Bookmark',
+      template: './src/templates/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Added',
+      filename: 'added.html',
+      template: './src/templates/added.html'
     })
   ],
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   }
