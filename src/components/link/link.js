@@ -26,11 +26,11 @@ const editButton = (id) => {
   div.innerText = '✎';
   div.dataset.id = id;
   return div;
-}
+};
 
 // make container with close icon
 const linkContainer = (
-  linkElement, 
+  linkElement,
   deleteButton,
   editButton
 ) => {
@@ -48,5 +48,5 @@ export const link = (linkValues) => {
     deleteButton(linkValues.id),
     editButton(linkValues.id)
   );
-}
+};
 

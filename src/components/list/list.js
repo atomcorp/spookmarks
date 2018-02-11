@@ -2,7 +2,7 @@
   Add link items to the list
 */
 import { store } from '../../store/store.js';
-import { 
+import {
   REMOVE_FROM_LIST,
   EDIT_IN_LIST,
  } from '../../store/types.js';
@@ -44,16 +44,15 @@ list.addEventListener('click', (e) => {
     updateList(store.access().list);
     setStoreToStorage(store.access());
   } else if (e.target.classList.contains('js--edit')) {
-    // add edit field
     const item = store.getItemFromList(
       e.target.dataset.id
     );
     e.target.appendChild(buildEditForm(item));
-  } else if (e.target.classList.contains('js--confirm')) 
-  // TODO: need to remove this from the listener
-  // want it to be a form so it still works when 
-  // submitting
-  // TODO: also needs to stop adding more than 1
+  } else if (e.target.classList.contains('js--confirm')) {
+    // TODO: need to remove this from the listener
+    // want it to be a form so it still works when
+    // submitting
+    // TODO: also needs to stop adding more than 1
     const item = store.getItemFromList(
       e.target.dataset.id
     );

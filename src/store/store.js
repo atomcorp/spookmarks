@@ -1,4 +1,4 @@
-import { 
+import {
   listHandler, getFromList,
 } from './handle-list.js';
 import initialData from './initial-data.js';
