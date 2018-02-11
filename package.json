@@ -34,6 +34,7 @@
   "eslintIgnore": [
     "webpack.*",
     "public",
-    "*.test.js"
+    "*.test.js",
+    "src/store/dummy-data.js"
   ]
 }

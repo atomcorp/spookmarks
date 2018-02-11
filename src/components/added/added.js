@@ -18,7 +18,7 @@ export const appendMessages = () => {
   const { link, name } = getMessages();
   confirmation.appendChild(linkElement(link));
   if (link !== name) {
-    confirmation.appendChild(savedAs())
+    confirmation.appendChild(savedAs());
     confirmation.appendChild(nameElement(name));
   }
 };

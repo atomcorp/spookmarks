@@ -6,6 +6,7 @@
 import {
   listHandler, getFromList,
 } from './handle-list.js';
+import { pageHandler } from './handle-page.js';
 import initialData from './initial-data.js';
 import {
   getStoreFromStorage,
@@ -30,7 +31,11 @@ const storeHandler = (data = initialData) => {
     );
   };
   const updatePage = (action, page) => {
-    // do stuff
+    store = Object.assign(
+      {}, store, {
+        page: pageHandler(action, page, store.page),
+      }
+    );
   };
   const getItemFromList = (id) => {
     return getFromList(id, store.list);

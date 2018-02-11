@@ -38,12 +38,22 @@ const clearItems = () => {
   }
 };
 
+const reduceListByPage = (store) => {
+  if (store.list.length < 21) {
+    return store.list;
+  }
+  return store.list.slice(
+    (store.page * 20) - 20,
+    store.page * 20
+  );
+};
+
 /**
  * Sends the new store to be renderd on page
  * saves new store in local storage
  */
 const updateDomAndStorage = () => {
-  appendItems(store.access().list);
+  appendItems(reduceListByPage(store.access()));
   setStoreToStorage(store.access());
 };
 
