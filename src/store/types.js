@@ -3,3 +3,5 @@ export const REMOVE_FROM_LIST = 'REMOVE_FROM_LIST';
 export const EDIT_IN_LIST = 'EDIT_IN_LIST';
 export const TOOGLE_EDITING = 'TOOGLE_EDITING';
 export const CHANGE_PAGE = 'CHANGE_PAGE';
+export const NEXT_PAGE = 'NEXT_PAGE';
+export const PREV_PAGE = 'PREV_PAGE';

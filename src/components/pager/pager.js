@@ -4,6 +4,7 @@
  */
 import { store } from '../../store/store.js';
 import { compilePageItems } from './elements.js';
+import { updateListInDom } from '../list/list.js';
 // print out pagers numbers <1,2,3>, according to list length
 // method to update what page number we are
 // method to grab correct section of list
@@ -31,7 +32,15 @@ const appendPager = (pager) => {
 
 const pagerListener = (pager) => {
   pager.addEventListener('click', (e) => {
-    console.log(e.target);
+    if (e.target.classList.contains('js--new-page')) {
+      store.updatePage(
+        e.target.dataset.type,
+        e.target.dataset.id
+          ? Number(e.target.dataset.id)
+          : getCurrentPage()
+      );
+      updateListInDom();
+    }
   });
 };
 

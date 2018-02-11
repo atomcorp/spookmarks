@@ -33,9 +33,10 @@ const storeHandler = (data = initialData) => {
   const updatePage = (action, page) => {
     store = Object.assign(
       {}, store, {
-        page: pageHandler(action, page, store.page),
+        page: pageHandler(action, page, store),
       }
     );
+    console.log(store);
   };
   const getItemFromList = (id) => {
     return getFromList(id, store.list);
