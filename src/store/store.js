@@ -9,8 +9,12 @@ import {
 const storeHandler = (data = initialData) => {
   let store = data;
   const updateList = (action, item) => {
-    store.list = listHandler(
-      action, item, store.list
+    store = Object.assign(
+      {}, store, {
+        list: listHandler(
+          action, item, store.list
+        ),
+      }
     );
   };
   const updatePage = (action, page) => {
