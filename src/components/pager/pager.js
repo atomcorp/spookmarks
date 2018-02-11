@@ -29,7 +29,7 @@ const getHowManyPages = () => {
 
 /**
  * Add pager to DOM if more than 20 items
- * @param {Element} pager 
+ * @param {Element} pager
  */
 export const appendPager = (pager) => {
   if (getHowManyPages() < 2) {
@@ -39,9 +39,9 @@ export const appendPager = (pager) => {
 };
 
 /**
- * Add listener for clickin on pager buttons. 
+ * Add listener for clickin on pager buttons.
  * Render DOM after
- * @param {Element} pager 
+ * @param {Element} pager
  */
 const pagerListener = (pager) => {
   pager.addEventListener('click', (e) => {
@@ -59,7 +59,7 @@ const pagerListener = (pager) => {
 
 /**
  * Remove pager buttons
- * @param {Element} pager 
+ * @param {Element} pager
  */
 const clearPager = (pager) => {
   while (pager.firstChild) {
@@ -77,7 +77,7 @@ export const checkPagerOnItemDelete = () => {
   // make sure page number is correct,
   // if not rerender
   const currentPages = getHowManyPages();
-  if (store.pages !== currentPages) {
+  if (store.access().page > currentPages) {
     store.updatePage(
       CHANGE_PAGE,
       currentPages
