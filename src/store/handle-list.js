@@ -138,7 +138,7 @@ export const editItemInList = (
  * @param {!Array} list
  * @return {!Array} list
  */
-export const listHandler = (action, item, list) => {
+export const listHandler = (action, item, list = []) => {
   switch (action) {
     case ADD_TO_LIST:
       return addToList(

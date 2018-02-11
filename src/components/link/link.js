@@ -44,7 +44,7 @@ const editButton = (id) => {
  * If editing is true, return edit section
  * @param {{editing: boolean, name: string, link: string, id: string}}
  *   {editing, name, link, id}
- * @return {!Element}
+ * @return {!Element | void}
  */
 const editSection = ({editing, name, link, id}) => {
   if (editing) {

@@ -1,3 +1,5 @@
+import initialData from './initial-data.js';
+
 /**
  * Turns our store object into a string
  * so we can parse it into localStorage
@@ -12,7 +14,7 @@ const stringifyStorage = (store) => {
  * Get the localStorage string and
  * turn it back into an object
  * @param {string}
- * @return {Object}
+ * @return {*}
  */
 const parseStorage = (string) => {
   return JSON.parse(string);  
@@ -31,6 +33,8 @@ export const setStoreToStorage = (storage) => {
 
 /**
  * Set the localStorage with store
+ * popuplates with dummy data if empty
+ * TODO: nicer dummy data
  * @return {Object}
  */
 export const getStoreFromStorage = () => {
@@ -38,6 +42,7 @@ export const getStoreFromStorage = () => {
   if (inStore) {
     return parseStorage(inStore);
   }
+  return initialData;
 };
 
 /**
@@ -60,4 +65,5 @@ export const getStoreFromSession = () => {
   if (inStore) {
     return parseStorage(inStore);
   }
+  return {'link': 'Oops, something went wrong'};
 };

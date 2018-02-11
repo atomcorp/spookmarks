@@ -21,7 +21,7 @@ const incrementPage = (currentpage, listLength) => {
 /**
  * Send new page number to store
  * @param {string} action
- * @param {number} newPage
+ * @param {number} page
  * @param {Object} store
  * @return {number}
  */

@@ -7,7 +7,6 @@ import {
   listHandler, getFromList,
 } from './handle-list.js';
 import { pageHandler } from './handle-page.js';
-import initialData from './initial-data.js';
 import {
   getStoreFromStorage,
 } from './browser-storage.js';
@@ -19,8 +18,9 @@ import {
  * @param {Object} data
  * @return {Object}
  */
-const storeHandler = (data = initialData) => {
+const storeHandler = (data) => {
   let store = data;
+  console.log(store)
   const updateList = (action, item) => {
     store = Object.assign(
       {}, store, {

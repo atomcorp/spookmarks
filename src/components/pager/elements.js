@@ -12,7 +12,7 @@ import {
  * Return button
  * @param {string | number} text
  * @param {string} type
- * @param {number} id
+ * @param {?number} id
  * @return {Element}
  */
 const button = (text, type, id) => {
@@ -29,7 +29,7 @@ const button = (text, type, id) => {
 /**
  *
  * @param {number} pages
- * @return {Element}
+ * @return {DocumentFragment}
  */
 export const compilePageItems = (pages) => {
   const fragment = document.createDocumentFragment();
