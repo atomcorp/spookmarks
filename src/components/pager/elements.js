@@ -12,7 +12,7 @@ import {
  * Return button
  * @param {string | number} text
  * @param {string} type
- * @param {?number} id
+ * @param {number=} id
  * @return {Element}
  */
 const button = (text, type, id) => {

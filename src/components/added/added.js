@@ -13,11 +13,15 @@ const getMessages = () => {
   return getStoreFromSession();
 };
 
+/**
+ * Add messages to DOM,
+ * don't show name if not there, or same as link
+ */
 export const appendMessages = () => {
   const confirmation = document.querySelector('.js--added');
-  const { link, name } = getMessages();
-  confirmation.appendChild(linkElement(link));
-  if (link !== name) {
+  const msg = getMessages();
+  confirmation.appendChild(linkElement(msg.link));
+  if (msg.link !== msg.name && msg.name) {
     confirmation.appendChild(savedAs());
     confirmation.appendChild(nameElement(name));
   }

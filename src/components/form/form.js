@@ -28,7 +28,7 @@ const handleSubmit = (e) => {
   });
   clearForm();
   setStoreToStorage(store.access());
-  window.location.href = '/added';
+  window.location.href = '/added/';
 };
 
 /**

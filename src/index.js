@@ -1,5 +1,4 @@
 import './styles.scss';
-import { store } from './store/store.js';
 import { addFormListener } from './components/form/form.js';
 import { updateListInDom } from './components/list/list.js';
 import { appendMessages } from './components/added/added.js';
@@ -10,6 +9,6 @@ if (path === '/') {
   addFormListener();
   updateListInDom();
   enablePager();
-} else if (path === '/added') {
+} else if (path === '/added/') {
   appendMessages();
 }

@@ -12,6 +12,7 @@ Tasks:
   ✔ pager doesn't show whole list @bug @done(18-02-11 19:48)
   ✔ pager (probably) doesn't update when adding new items @done(18-02-11 19:48)
   ☐ should integrate pager and list state in store better, so you can update both at the same time
+  ☐ when on third page and delete, get taken to last page @bug
   List:
     ✔ Show link, use title @done(18-02-11 19:51)
     ✔ Pagination (20 per page) @done(18-02-11 19:51)

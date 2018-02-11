@@ -16,7 +16,7 @@ import {
  * Add an object to list array
  * @param {Object} item
  * @param {!Array} list
- * @return {!Array}
+ * @return {Array}
  */
 export const addToList = (item, list = []) => {
   return [...list, item];
@@ -72,7 +72,7 @@ export const linkItem = ({ name, link }) => {
  * @param {Object} itemToEdit
  * @param {Array} list
  * @param {boolean=} impose
- * @return {Object} item
+ * @return {Array} item
  */
 export const toogleEditableinList = (itemToEdit, list, impose) => {
   return list.map((item) => {
@@ -133,12 +133,12 @@ export const editItemInList = (
  * Handle all the variations of updating
  * state for the list section
  * always returns the list
- * @param {!string} action
- * @param {!Object} item
- * @param {!Array} list
- * @return {!Array} list
+ * @param {string} action
+ * @param {Object} item
+ * @param {Array} list
+ * @return {Array} list
  */
-export const listHandler = (action, item, list = []) => {
+export const listHandler = (action, item, list) => {
   switch (action) {
     case ADD_TO_LIST:
       return addToList(

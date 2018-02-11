@@ -20,7 +20,6 @@ import {
  */
 const storeHandler = (data) => {
   let store = data;
-  console.log(store)
   const updateList = (action, item) => {
     store = Object.assign(
       {}, store, {

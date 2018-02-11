@@ -13,11 +13,11 @@ const stringifyStorage = (store) => {
 /**
  * Get the localStorage string and
  * turn it back into an object
- * @param {string}
- * @return {*}
+ * @param {string} string
+ * @return {Object}
  */
 const parseStorage = (string) => {
-  return JSON.parse(string);  
+  return JSON.parse(string);
 };
 
 /**
@@ -26,7 +26,7 @@ const parseStorage = (string) => {
  */
 export const setStoreToStorage = (storage) => {
   localStorage.setItem(
-    'bookList', 
+    'bookList',
     stringifyStorage(storage)
   );
 };
