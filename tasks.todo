@@ -6,6 +6,8 @@ Tasks:
   ☐ have to add a way to set default page number when using store
   ☐ add a check of stores pageNumber to pass to list rendering
   ☐ shakey business when using dom elements that don't exist on the /added page
+  ☐ add form and list elements with js?
+  ☐ What's your list about section? hip hop youtube links?
   List:
     ☐ Show link, use title
     ☐ Pagination (20 per page)

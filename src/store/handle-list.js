@@ -59,7 +59,7 @@ export const getFromList = (id, list) => {
  */
 export const linkItem = ({ name, link }) => {
   return {
-    name,
+    name: name ? name : link,
     link,
     id: shortid.generate(),
     created: Date.now(),
