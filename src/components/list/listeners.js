@@ -10,7 +10,7 @@ import {
 } from '../../store/types.js';
 import { store } from '../../store/store.js';
 import { updateListInDom } from './list.js';
-
+import { checkPagerOnItemDelete } from '../pager/pager.js';
 /**
  * Add event listeners for list element
  * @param {Element} list
@@ -59,6 +59,7 @@ export const addListListeners = (list) => {
 const handleClick = (action, id) => {
   const item = store.getItemFromList(id);
   store.updateList(action, item);
+  checkPagerOnItemDelete();
   updateListInDom();
 };
 

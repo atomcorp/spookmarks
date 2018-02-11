@@ -1,28 +1,31 @@
 Tasks:
-  ☐ need to give appendItems exactly what list items to show 
+  ✔ need to give appendItems exactly what list items to show @done(18-02-11 19:50)
   ✔ refactor submit handler so it can do all the jobs that will get thrown at it @done(18-02-11 13:10)
   ☐ validation
   ✔ why is he order odd when adding items? @done(18-02-10 19:11)
-  ☐ have to add a way to set default page number when using store
-  ☐ add a check of stores pageNumber to pass to list rendering
+  ✘ have to add a way to set default page number when using store @cancelled(18-02-11 19:50)
+  ✔ add a check of stores pageNumber to pass to list rendering @done(18-02-11 19:50)
   ☐ shakey business when using dom elements that don't exist on the /added page
-  ☐ add form and list elements with js?
+  ✘ add form and list elements with js? @cancelled(18-02-11 19:51)
   ☐ What's your list about section? hip hop youtube links?
   ☐ load dummy data button
+  ✔ pager doesn't show whole list @bug @done(18-02-11 19:48)
+  ✔ pager (probably) doesn't update when adding new items @done(18-02-11 19:48)
+  ☐ should integrate pager and list state in store better, so you can update both at the same time
   List:
-    ☐ Show link, use title
-    ☐ Pagination (20 per page)
+    ✔ Show link, use title @done(18-02-11 19:51)
+    ✔ Pagination (20 per page) @done(18-02-11 19:51)
     ✔ editable, deletable @done(18-02-11 13:10)
   Form:
     ☐ Input url
     ✘ On blur checks if valid? @cancelled(18-02-10 20:57)
     ✔ Input title (optional?) @done(18-02-10 20:57)
-    ☐ Submit button
+    ✔ Submit button @done(18-02-11 19:51)
       ☐ On Submit checks if valid    
-    ☐ blank out inputs when adding something
+    ✔ blank out inputs when adding something @done(18-02-11 19:51)
   Submit page:
-    ☐ Different "page"
-    ☐ Shows inputted url (and title)
+    ✔ Different "page" @done(18-02-11 19:51)
+    ✔ Shows inputted url (and title) @done(18-02-11 19:51)
     ☐ Shows thank you (and gif?)
 
 Possibly:

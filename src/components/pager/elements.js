@@ -11,7 +11,8 @@ import {
 /**
  * Return button
  * @param {string | number} text
- * @param {string | number} id
+ * @param {string} type
+ * @param {number} id
  * @return {Element}
  */
 const button = (text, type, id) => {

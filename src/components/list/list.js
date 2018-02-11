@@ -8,7 +8,6 @@ import {
   setStoreToStorage,
 } from '../../store/browser-storage.js';
 import { addListListeners } from './listeners.js';
-
 const list = document.querySelector('.js--list');
 
 /**

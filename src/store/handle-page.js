@@ -34,7 +34,7 @@ export const pageHandler = (action, page, store) => {
     case NEXT_PAGE:
       return incrementPage(
         page,
-        Math.floor(store.list.length / 20)
+        Math.ceil(store.list.length / 20)
       );
     default:
       return page;

@@ -36,7 +36,6 @@ const storeHandler = (data = initialData) => {
         page: pageHandler(action, page, store),
       }
     );
-    console.log(store);
   };
   const getItemFromList = (id) => {
     return getFromList(id, store.list);

@@ -5,6 +5,7 @@
 import { store } from '../../store/store.js';
 import { compilePageItems } from './elements.js';
 import { updateListInDom } from '../list/list.js';
+import { CHANGE_PAGE } from '../../store/types';
 // print out pagers numbers <1,2,3>, according to list length
 // method to update what page number we are
 // method to grab correct section of list
@@ -23,13 +24,25 @@ const getCurrentPage = () => {
  * @return {number}
  */
 const getHowManyPages = () => {
-  return Math.floor(store.access().list.length / 20);
+  return Math.ceil(store.access().list.length / 20);
 };
 
-const appendPager = (pager) => {
+/**
+ * Add pager to DOM if more than 20 items
+ * @param {Element} pager 
+ */
+export const appendPager = (pager) => {
+  if (getHowManyPages() < 2) {
+    return;
+  }
   pager.appendChild(compilePageItems(getHowManyPages()));
 };
 
+/**
+ * Add listener for clickin on pager buttons. 
+ * Render DOM after
+ * @param {Element} pager 
+ */
 const pagerListener = (pager) => {
   pager.addEventListener('click', (e) => {
     if (e.target.classList.contains('js--new-page')) {
@@ -44,9 +57,43 @@ const pagerListener = (pager) => {
   });
 };
 
+/**
+ * Remove pager buttons
+ * @param {Element} pager 
+ */
+const clearPager = (pager) => {
+  while (pager.firstChild) {
+    pager.removeChild(pager.firstChild);
+  }
+};
+
+/**
+ * Updates pager dom and store
+ * Without this and deleting last element of a
+ * page (eg 5), would produce empty list as it still
+ * thinks it's on page 5
+ */
+export const checkPagerOnItemDelete = () => {
+  // make sure page number is correct,
+  // if not rerender
+  const currentPages = getHowManyPages();
+  if (store.pages !== currentPages) {
+    store.updatePage(
+      CHANGE_PAGE,
+      currentPages
+    );
+    const pager = document.querySelector('.js--pager');
+    clearPager(pager);
+    appendPager(pager);
+  }
+};
+
+/**
+ * Adds pager and listens for pager buttons
+ */
 export const enablePager = () => {
   const pager = document.querySelector('.js--pager');
-  appendPager(pager);
   pagerListener(pager);
+  appendPager(pager);
 };
 
