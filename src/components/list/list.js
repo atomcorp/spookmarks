@@ -18,7 +18,7 @@ const list = document.querySelector('.js--list');
 /**
  * Removes all the list items
  * then adds them to the dom
- * @param {Array} items 
+ * @param {Array} items
  */
 const appendItems = (items = []) => {
   clearItems();
@@ -46,8 +46,8 @@ const clearItems = () => {
  * For when a user clicks on a button in list
  * Updates item in store, depending on action passed
  * Then rerenders dom
- * @param {string} action 
- * @param {string} id 
+ * @param {string} action
+ * @param {string} id
  */
 const handleClick = (action, id) => {
   const item = store.getItemFromList(id);
@@ -76,41 +76,44 @@ const updateDomAndStorage = () => {
   setStoreToStorage(store.access());
 };
 
-/**
- * Listens for any click within the list div
- * Sends acions depending on context
- */
-list.addEventListener('click', (e) => {
-  // TODO: definitely needs a refactor
-  if (e.target.classList.contains('js--delete')) {
-    handleClick(REMOVE_FROM_LIST, e.target.dataset.id);
-  } else if (e.target.classList.contains('js--edit')) {
-    handleClick(TOOGLE_EDITING, e.target.dataset.id);
-  }
-});
+if (list) {
+  /**
+   * Listens for any click within the list div
+   * Sends acions depending on context
+   */
+  list.addEventListener('click', (e) => {
+    // TODO: definitely needs a refactor
+    if (e.target.classList.contains('js--delete')) {
+      handleClick(REMOVE_FROM_LIST, e.target.dataset.id);
+    } else if (e.target.classList.contains('js--edit')) {
+      handleClick(TOOGLE_EDITING, e.target.dataset.id);
+    }
+  });
 
-/**
- * Listens for any submit within the list div
- * Currently, only the edit item form
- * is intended to use this
- */
-list.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (e.target.classList.contains('js--confirm-edit')) {
-    // TODO: need to remove this from the listener
-    // want it to be a form so it still works when
-    // submitting
-    // TODO: also needs to stop adding more than 1
+  /**
+   * Listens for any submit within the list div
+   * Currently, only the edit item form
+   * is intended to use this
+   */
+  list.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (e.target.classList.contains('js--confirm-edit')) {
+      // TODO: need to remove this from the listener
+      // want it to be a form so it still works when
+      // submitting
+      // TODO: also needs to stop adding more than 1
 
-    handleSubmit(
-      EDIT_IN_LIST,
-      {
-        name: e.target.querySelector('.js--name').value,
-        link: e.target.querySelector('.js--link').value,
-        id: e.target.dataset.id,
-      }
-    );
-  }
-});
+      handleSubmit(
+        EDIT_IN_LIST,
+        {
+          name: e.target.querySelector('.js--name').value,
+          link: e.target.querySelector('.js--link').value,
+          id: e.target.dataset.id,
+        }
+      );
+    }
+  });
+}
+
 
 export const updateListInDom = updateDomAndStorage;

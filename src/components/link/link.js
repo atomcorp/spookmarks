@@ -20,11 +20,11 @@ const linkElement = ({ name, link, id }) => {
  * @return {!Element}
  */
 const deleteButton = (id) => {
-  const div = document.createElement('div');
-  div.classList.add('link__delete', 'js--delete');
-  div.innerText = '🗙';
-  div.dataset.id = id;
-  return div;
+  const button = document.createElement('button');
+  button.classList.add('link__delete', 'js--delete');
+  button.innerText = '🗙';
+  button.dataset.id = id;
+  return button;
 };
 
 /**
@@ -33,11 +33,11 @@ const deleteButton = (id) => {
  * @return {!Element}
  */
 const editButton = (id) => {
-  const div = document.createElement('div');
-  div.classList.add('link__edit', 'js--edit');
-  div.innerText = '✎';
-  div.dataset.id = id;
-  return div;
+  const button = document.createElement('button');
+  button.classList.add('link__edit', 'js--edit');
+  button.innerText = '✎';
+  button.dataset.id = id;
+  return button;
 };
 
 /**

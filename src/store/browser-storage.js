@@ -39,3 +39,25 @@ export const getStoreFromStorage = () => {
     return parseStorage(inStore);
   }
 };
+
+/**
+ * Set the sessionStorage item
+ * @param {Object} item
+ */
+export const setItemToSession = (item) => {
+  sessionStorage.setItem(
+    'addedItem',
+    stringifyStorage(item)
+  );
+};
+
+/**
+ * Get the sessionStorage item
+ * @return {Object}
+ */
+export const getStoreFromSession = () => {
+  const inStore = sessionStorage.getItem('addedItem');
+  if (inStore) {
+    return parseStorage(inStore);
+  }
+};

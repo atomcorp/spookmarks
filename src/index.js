@@ -1,8 +1,12 @@
 import './styles.scss';
-import './components/form/form.js';
+import { addFormListener } from './components/form/form.js';
 import { updateListInDom } from './components/list/list.js';
 import { store } from './store/store.js';
+const path = window.location.pathname;
 
-updateListInDom(store.access().list);
-
-
+if (path === '/') {
+  addFormListener();
+  updateListInDom(store.access().list);
+} else if (path === '/added') {
+  // added stuff here, does it matter?
+}

@@ -5,6 +5,7 @@ Tasks:
   ✔ why is he order odd when adding items? @done(18-02-10 19:11)
   ☐ have to add a way to set default page number when using store
   ☐ add a check of stores pageNumber to pass to list rendering
+  ☐ shakey business when using dom elements that don't exist on the /added page
   List:
     ☐ Show link, use title
     ☐ Pagination (20 per page)
@@ -15,7 +16,7 @@ Tasks:
     ✔ Input title (optional?) @done(18-02-10 20:57)
     ☐ Submit button
       ☐ On Submit checks if valid    
-    ☐ 
+    ☐ blank out inputs when adding something
   Submit page:
     ☐ Different "page"
     ☐ Shows inputted url (and title)

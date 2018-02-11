@@ -1,17 +1,18 @@
 import { store } from '../../store/store.js';
 import { ADD_TO_LIST } from '../../store/types.js';
-import { updateListInDom } from '../list/list.js';
 import {
+  setItemToSession,
   setStoreToStorage,
 } from '../../store/browser-storage.js';
 // import { sentRequestToUrl } from './validation.js';
 
 const form = document.querySelector('.form');
-const title = form.querySelector('.js--title');
-const link = form.querySelector('.js--link');
+const title = document.querySelector('.js--title');
+const link = document.querySelector('.js--link');
 
 /**
- * Allows user to submit new link
+ * Allows user to submit new link if valid
+ * If valid, redirect to new page
  * @param {Event} e browser event
  */
 const handleSubmit = (e) => {
@@ -21,12 +22,32 @@ const handleSubmit = (e) => {
     name: title.value,
     link: link.value,
   });
-  // TODO: head to new page
-  updateListInDom(store.access().list);
+  setItemToSession({
+    name: title.value,
+    link: link.value,
+  });
+  clearForm();
+  setStoreToStorage(store.access());
+  window.location.href = '/added';
 };
 
-form.addEventListener('submit',
-  handleSubmit
-);
+/**
+ * Empties the form inputs
+ */
+const clearForm = () => {
+  title.value = '';
+  link.value = '';
+};
+
+/**
+ * User tries to add a link
+ */
+export const addFormListener = () => {
+  if (form) {
+    form.addEventListener('submit',
+      handleSubmit
+    );
+  }
+};
 
 
