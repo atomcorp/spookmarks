@@ -1,5 +1,6 @@
 /*
-  Add link items to the list
+  This essentially covers what list items
+  we display on the page
 */
 import { store } from '../../store/store.js';
 import {
@@ -14,7 +15,11 @@ import {
 
 const list = document.querySelector('.js--list');
 
-// TODO: add page number qualifier here
+/**
+ * Removes all the list items
+ * then adds them to the dom
+ * @param {Array} items 
+ */
 const appendItems = (items = []) => {
   clearItems();
   // doc.fragment is better performance apparently
@@ -26,6 +31,9 @@ const appendItems = (items = []) => {
   list.appendChild(fragment);
 };
 
+/**
+ * Removes all items from the dom
+ */
 const clearItems = () => {
   // this faster than innerHtml = '' !
   // https://stackoverflow.com/a/3955238/2368141
@@ -34,31 +42,58 @@ const clearItems = () => {
   }
 };
 
-const handleAction = (action, id) => {
+/**
+ * For when a user clicks on a button in list
+ * Updates item in store, depending on action passed
+ * Then rerenders dom
+ * @param {string} action 
+ * @param {string} id 
+ */
+const handleClick = (action, id) => {
   const item = store.getItemFromList(id);
   store.updateList(action, item);
-  updateDom();
+  updateDomAndStorage();
 };
 
-const handleNewValues = (action, newValues) => {
+/**
+ * When a user submits an edit form
+ * Updates list item with new values
+ * Then rerenders dom
+ * @param {string} action
+ * @param {Object} newValues = {name, value, id}
+ */
+const handleSubmit = (action, newValues) => {
   store.updateList(action, newValues);
-  updateDom();
+  updateDomAndStorage();
 };
 
-const updateDom = () => {
-  updateList(store.access().list);
+/**
+ * Sends the new store to be renderd on page
+ * saves new store in local storage
+ */
+const updateDomAndStorage = () => {
+  appendItems(store.access().list);
   setStoreToStorage(store.access());
 };
 
+/**
+ * Listens for any click within the list div
+ * Sends acions depending on context
+ */
 list.addEventListener('click', (e) => {
   // TODO: definitely needs a refactor
   if (e.target.classList.contains('js--delete')) {
-    handleAction(REMOVE_FROM_LIST, e.target.dataset.id);
+    handleClick(REMOVE_FROM_LIST, e.target.dataset.id);
   } else if (e.target.classList.contains('js--edit')) {
-    handleAction(TOOGLE_EDITING, e.target.dataset.id);
+    handleClick(TOOGLE_EDITING, e.target.dataset.id);
   }
 });
 
+/**
+ * Listens for any submit within the list div
+ * Currently, only the edit item form
+ * is intended to use this
+ */
 list.addEventListener('submit', (e) => {
   e.preventDefault();
   if (e.target.classList.contains('js--confirm-edit')) {
@@ -67,7 +102,7 @@ list.addEventListener('submit', (e) => {
     // submitting
     // TODO: also needs to stop adding more than 1
 
-    handleNewValues(
+    handleSubmit(
       EDIT_IN_LIST,
       {
         name: e.target.querySelector('.js--name').value,
@@ -78,4 +113,4 @@ list.addEventListener('submit', (e) => {
   }
 });
 
-export const updateList = appendItems;
+export const updateListInDom = updateDomAndStorage;

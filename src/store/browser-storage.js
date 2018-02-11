@@ -1,11 +1,27 @@
-const stringifyStorage = (list) => {
-  return JSON.stringify(list);
+/**
+ * Turns our store object into a string
+ * so we can parse it into localStorage
+ * @param {Object} store
+ * @return {string}
+ */
+const stringifyStorage = (store) => {
+  return JSON.stringify(store);
 };
 
+/**
+ * Get the localStorage string and
+ * turn it back into an object
+ * @param {string}
+ * @return {Object}
+ */
 const parseStorage = (string) => {
   return JSON.parse(string);  
 };
 
+/**
+ * Set the localStorage with store
+ * @param {Object} storage
+ */
 export const setStoreToStorage = (storage) => {
   localStorage.setItem(
     'bookList', 
@@ -13,10 +29,13 @@ export const setStoreToStorage = (storage) => {
   );
 };
 
-export const getStoreFromStorage = (list) => {
+/**
+ * Set the localStorage with store
+ * @return {Object}
+ */
+export const getStoreFromStorage = () => {
   const inStore = localStorage.getItem('bookList');
   if (inStore) {
     return parseStorage(inStore);
   }
-  return;
 };

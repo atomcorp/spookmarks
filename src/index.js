@@ -1,6 +1,6 @@
 import './styles.scss';
 import './components/form/form.js';
-import { updateList } from './components/list/list.js';
+import { updateListInDom } from './components/list/list.js';
 import { store } from './store/store.js';
 
 // get store
@@ -8,6 +8,6 @@ import { store } from './store/store.js';
 // add item to store from form
 // render list
 // repeat
-updateList(store.access().list);
+updateListInDom(store.access().list);
 
 

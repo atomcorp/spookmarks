@@ -1,7 +1,8 @@
 /*
-  Mathods for managing the list of links
+  Methods for managing the list of links (bookmarks)
   within the store
 */
+
 import shortid from 'shortid';
 import {
   ADD_TO_LIST,
@@ -12,9 +13,9 @@ import {
 
 
 /**
- * Add an object from array
- * @param {!object} item
- * @param {!object} list
+ * Add an object to list array
+ * @param {Object} item
+ * @param {!Array} list
  * @return {!Array}
  */
 export const addToList = (item, list = []) => {
@@ -23,14 +24,12 @@ export const addToList = (item, list = []) => {
 
 /**
  * Remove an object from array
- * @param {!{string}} id
- * @param {!{name: string, link: string, id: string}} list
+ * @param {Object} item
+ * @param {string} item.id
+ * @param {!Array} list
  * @return {!Array}
  */
 export const removeFromList = ({id}, list) => {
-  if (!list) {
-    throw new Error('Include the list!');
-  }
   return list.reduce((acc, link) => {
     if (link.id !== id) {
       return [...acc, link];
@@ -39,6 +38,12 @@ export const removeFromList = ({id}, list) => {
   }, []);
 };
 
+/**
+ * Using an id, return a complete list object
+ * @param {!string} id
+ * @param {!Array} list
+ * @return {!{}}
+ */
 export const getFromList = (id, list) => {
   return list.find((item) => {
     return item.id === id;
@@ -46,9 +51,11 @@ export const getFromList = (id, list) => {
 };
 
 /**
- * Create a link item
- * @param {{name: string, link: string}} item
- * @return {!{name: string, link: string, id: number}}
+ * Create a link item to go in the list
+ * @param {Object} item
+ * @param {string} item.name
+ * @param {string} item.link
+ * @return {Object} item
  */
 export const linkItem = ({ name, link }) => {
   return {
@@ -59,17 +66,47 @@ export const linkItem = ({ name, link }) => {
   };
 };
 
-export const toogleEditableinList = (itemToEdit, list) => {
+/**
+ * swap boolean of whether item is editable
+ * if impose used, must be that boolean
+ * @param {Object} itemToEdit
+ * @param {Array} list
+ * @param {boolean=} impose
+ * @return {Object} item
+ */
+export const toogleEditableinList = (itemToEdit, list, impose) => {
   return list.map((item) => {
     if (item.id === itemToEdit.id) {
       return Object.assign({}, item, {
-        editing: !item.editing,
+        editing: imposeEditableState(item, impose),
       });
     }
     return item;
   });
 };
 
+/**
+ *
+ * @param {Object} item
+ * @param {boolean=} impose
+ * @return {!boolean}
+ */
+const imposeEditableState = (item, impose) => {
+  if (impose === undefined) {
+    return !item.editing;
+  }
+  return impose;
+};
+
+/**
+ *
+ * @param {Object} item
+ * @param {string} item.name
+ * @param {string} item.link
+ * @param {string} item.id
+ * @param {Array} list
+ * @return {Array} list
+ */
 export const editItemInList = (
   {name, link, id},
   list
@@ -92,16 +129,14 @@ export const editItemInList = (
   });
 };
 
-// update and return just the list
-// add or remove
 /**
- * Handle all the variations in state for the
- * list section
+ * Handle all the variations of updating
+ * state for the list section
  * always returns the list
  * @param {!string} action
- * @param {!{name: string, link: string, id: number}} item
+ * @param {!Object} item
  * @param {!Array} list
- * @return {!Array}
+ * @return {!Array} list
  */
 export const listHandler = (action, item, list) => {
   switch (action) {

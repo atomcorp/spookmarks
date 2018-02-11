@@ -1,6 +1,6 @@
 import { store } from '../../store/store.js';
 import { ADD_TO_LIST } from '../../store/types.js';
-import { updateList } from '../list/list.js';
+import { updateListInDom } from '../list/list.js';
 import {
   setStoreToStorage,
 } from '../../store/browser-storage.js';
@@ -18,7 +18,7 @@ const handleSubmit = (e) => {
     link: link.value,
   });
   // TODO: head to new page
-  updateList(store.access().list);
+  updateListInDom(store.access().list);
   setStoreToStorage(store.access());
 };
 
