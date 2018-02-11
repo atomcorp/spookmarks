@@ -5,14 +5,14 @@ Tasks:
   ✔ why is he order odd when adding items? @done(18-02-10 19:11)
   ✘ have to add a way to set default page number when using store @cancelled(18-02-11 19:50)
   ✔ add a check of stores pageNumber to pass to list rendering @done(18-02-11 19:50)
-  ☐ shakey business when using dom elements that don't exist on the /added page
+  ✔ shakey business when using dom elements that don't exist on the /added page @done(18-02-11 21:27)
   ✘ add form and list elements with js? @cancelled(18-02-11 19:51)
   ☐ What's your list about section? hip hop youtube links?
   ☐ load dummy data button
   ✔ pager doesn't show whole list @bug @done(18-02-11 19:48)
   ✔ pager (probably) doesn't update when adding new items @done(18-02-11 19:48)
   ☐ should integrate pager and list state in store better, so you can update both at the same time
-  ☐ when on third page and delete, get taken to last page @bug
+  ✔ when on third page and delete, get taken to last page @bug @done(18-02-11 21:26)
   List:
     ✔ Show link, use title @done(18-02-11 19:51)
     ✔ Pagination (20 per page) @done(18-02-11 19:51)
