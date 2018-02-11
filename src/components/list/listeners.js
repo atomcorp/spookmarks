@@ -37,11 +37,13 @@ export const addListListeners = (list) => {
   list.addEventListener('submit', (e) => {
     e.preventDefault();
     if (e.target.classList.contains('js--confirm-edit')) {
+      const name = e.target.querySelector('.js--name').value;
+      const link = e.target.querySelector('.js--link').value;
       handleSubmit(
         EDIT_IN_LIST,
         {
-          name: e.target.querySelector('.js--name').value,
-          link: e.target.querySelector('.js--link').value,
+          name: name ? name : link,
+          link,
           id: e.target.dataset.id,
         }
       );
