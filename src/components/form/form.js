@@ -10,6 +10,10 @@ const form = document.querySelector('.form');
 const title = form.querySelector('.js--title');
 const link = form.querySelector('.js--link');
 
+/**
+ * Allows user to submit new link
+ * @param {Event} e browser event
+ */
 const handleSubmit = (e) => {
   e.preventDefault();
   // TODO: add validation
@@ -19,7 +23,6 @@ const handleSubmit = (e) => {
   });
   // TODO: head to new page
   updateListInDom(store.access().list);
-  setStoreToStorage(store.access());
 };
 
 form.addEventListener('submit',
