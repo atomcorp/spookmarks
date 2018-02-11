@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+// #cd6a51 orange
+
+body {
+  // https://stackoverflow.com/a/38781315/2368141
+  font-family: 'Roboto Mono', monospace, monospace;
+  font-size: 2rem;
+  background: #fffef4;
+  color: #262626;
+}
+
+a {
+  &:visited {
+    color: inherit;
+  }
+}
+
+
