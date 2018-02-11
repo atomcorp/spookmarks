@@ -1,8 +1,54 @@
 .form {
   max-width: 800px;
   margin: 0 auto;
-  @include small {
-    padding: 30px;
+  background: #e0ddbf;
+  padding: 20px 30px;
+  @include tablet {
+    padding: 40px 60px;
   }
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: 
+      "link button"
+      "name button"; 
+  }
+}
 
+
+
+.form__link {
+  padding: 20px 10px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #eee;
+  @include tablet {
+    font-size: 3rem;
+  }
+  @supports (display: grid) {
+    grid-area: link;
+  }
+}
+
+.form__title {
+  padding: 10px 5px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #eee;
+  @supports (display: grid) {
+    grid-area: name;
+  }
+}
+
+.form__button {
+  border: 0;
+  padding: 0 30px;
+  cursor: pointer;
+  background: #ff9800;
+  border: 3px solid #eee;
+  font-size: 6rem;
+  @supports (display: grid) {
+    grid-area: button;
+  }
 }
