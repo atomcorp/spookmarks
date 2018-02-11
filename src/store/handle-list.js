@@ -4,10 +4,11 @@
 */
 import shortid from 'shortid';
 import {
-  ADD_TO_LIST, 
+  ADD_TO_LIST,
   REMOVE_FROM_LIST,
-  EDIT_IN_LIST
-} from './types.js'
+  EDIT_IN_LIST,
+  TOOGLE_EDITING,
+} from './types.js';
 
 
 /**
@@ -45,7 +46,7 @@ export const getFromList = (id, list) => {
 };
 
 /**
- * Adds id to item
+ * Create a link item
  * @param {{name: string, link: string}} item
  * @return {!{name: string, link: string, id: number}}
  */
@@ -54,15 +55,25 @@ export const linkItem = ({ name, link }) => {
     name,
     link,
     id: shortid.generate(),
-    created: Date.now()
+    created: Date.now(),
   };
+};
+
+export const toogleEditableinList = (itemToEdit, list) => {
+  return list.map((item) => {
+    if (item.id === itemToEdit.id) {
+      return Object.assign({}, item, {
+        editing: !item.editing,
+      });
+    }
+    return item;
+  });
 };
 
 export const editItemInList = (
   {name, link, id},
   list
 ) => {
-  console.log({ name, link, id }, list)
   return list.map((item) => {
     if (item.id === id) {
       return Object.assign(
@@ -72,6 +83,7 @@ export const editItemInList = (
           name,
           link,
           id,
+          editing: false,
           edited: Date.now(),
         }
       );
@@ -83,7 +95,9 @@ export const editItemInList = (
 // update and return just the list
 // add or remove
 /**
- *
+ * Handle all the variations in state for the
+ * list section
+ * always returns the list
  * @param {!string} action
  * @param {!{name: string, link: string, id: number}} item
  * @param {!Array} list
@@ -100,6 +114,8 @@ export const listHandler = (action, item, list) => {
       return removeFromList(item, list);
     case EDIT_IN_LIST:
       return editItemInList(item, list);
+    case TOOGLE_EDITING:
+      return toogleEditableinList(item, list);
     default:
       return list;
   }

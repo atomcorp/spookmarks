@@ -6,12 +6,14 @@
 const nameElement = (name) => {
   const nameEl = document.createElement('input');
   nameEl.value = name;
+  nameEl.classList.add('js--name');
   return nameEl;
 };
 
 const linkElement = (link) => {
   const linkEl = document.createElement('input');
   linkEl.value = link;
+  linkEl.classList.add('js--link');
   return linkEl;
 };
 
@@ -22,8 +24,10 @@ const submitElement = () => {
   return button;
 };
 
-export const buildEditForm = ({name, link}) => {
+export const editForm = ({name, link, id}) => {
   const form = document.createElement('form');
+  form.dataset.id = id;
+  form.classList.add('js--confirm-edit');
   form.appendChild(nameElement(name));
   form.appendChild(linkElement(link));
   form.appendChild(submitElement());

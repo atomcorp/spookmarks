@@ -1,3 +1,5 @@
+import { editForm } from '../edit/edit.js';
+
 /**
  *
  * @param {{title: string, link: string, id: number}} { title, link, id }
@@ -28,17 +30,28 @@ const editButton = (id) => {
   return div;
 };
 
+const editSection = ({editing, name, link, id}) => {
+  if (editing) {
+    return editForm({name, link, id});
+  }
+  return;
+};
+
 // make container with close icon
 const linkContainer = (
-  linkElement,
-  deleteButton,
-  editButton
+  link,
+  deleteEl,
+  edit,
+  editable
 ) => {
   const div = document.createElement('div');
   div.classList.add('link');
-  div.appendChild(linkElement);
-  div.appendChild(deleteButton);
-  div.appendChild(editButton);
+  div.appendChild(link);
+  div.appendChild(deleteEl);
+  div.appendChild(edit);
+  if (editable) {
+    div.appendChild(editable);
+  }
   return div;
 };
 
@@ -46,7 +59,8 @@ export const link = (linkValues) => {
   return linkContainer(
     linkElement(linkValues),
     deleteButton(linkValues.id),
-    editButton(linkValues.id)
+    editButton(linkValues.id),
+    editSection(linkValues)
   );
 };
 
