@@ -25,6 +25,7 @@
   color: $highlight-colour;
   text-shadow: 0;
   transition: text-shadow 0.4s;
+  word-wrap: break-word;
   @include tablet {
     font-size: 3rem;
     padding: 20px 40px;

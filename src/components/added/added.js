@@ -23,6 +23,6 @@ export const appendMessages = () => {
   confirmation.appendChild(linkElement(msg.link));
   if (msg.link !== msg.name && msg.name) {
     confirmation.appendChild(savedAs());
-    confirmation.appendChild(nameElement(name));
+    confirmation.appendChild(nameElement(msg.name));
   }
 };

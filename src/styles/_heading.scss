@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   color: #b99f6a;
-  margin: 40px 0 40px;
+  margin: 40px 0 60px;
   @include desktop {
     margin: 40px 0 120px;
   }
@@ -18,7 +18,10 @@
   margin: 0;
   font-family: 'Permanent Marker', 'Roboto Mono', monospace, monospace;
   color: $highlight-colour;
-    animation: pulse ease-in-out 2s infinite alternate; 
+  animation: pulse ease-in-out 2s infinite alternate; 
+  a {
+    text-decoration: none;
+  }
   @include tablet {
     font-size: 6rem;
   }
@@ -32,10 +35,10 @@
 
 @keyframes pulse {
   from {
-    text-shadow: 0 1px 8px rgba(255, 152, 0, 0.3);
+    text-shadow: 0 1px 12px rgba(255, 152, 0, 0.3);
   }
   to {
-    text-shadow: 0 1px 12px rgba(255, 152, 0, 0.5);    
+    text-shadow: 0 4px 16px rgba(255, 152, 0, 0.6);    
   }
 }
 

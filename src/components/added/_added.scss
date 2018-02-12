@@ -1,0 +1,52 @@
+.added {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background: linear-gradient(180deg, #2a2c29, #2e322e);
+  // animation: pulseAdded ease-in-out 2s infinite alternate;
+  box-shadow: 0 8px 24px rgba(214, 144, 0, 0.2), 4px 8px 36px rgba(214, 144, 0, 0.2), -4px 8px 36px rgba(214, 144, 0, 0.2);
+}
+
+@keyframes pulseAdded {
+  from {
+    box-shadow: 0 4px 12px rgba(214, 144, 0, 0.2), 4px 4px 16px rgba(214, 144, 0, 0.2), -4px 4px 16px rgba(214, 144, 0, 0.2);
+  }
+  to {
+    box-shadow: 0 8px 24px rgba(214, 144, 0, 0.2), 4px 8px 36px rgba(214, 144, 0, 0.2), -4px 8px 36px rgba(214, 144, 0, 0.2);
+  }
+}
+
+.added__message {
+  margin: 0 0 40px;
+}
+
+.added__links {
+  padding: 40px 0;
+  border-top: 3px solid;
+  margin: 20px 0;
+  border-bottom: 3px solid;
+}
+
+.added__title {
+  font-size: 6rem;
+  h3 {
+    margin: 0;
+  }
+}
+
+.added__link {
+  font-size: 4rem;
+  word-wrap: break-word;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.added__name {
+  font-size: 3rem;
+}
+
+.added__back {
+  font-size: 1.5rem;
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
