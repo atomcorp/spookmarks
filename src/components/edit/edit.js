@@ -42,7 +42,8 @@ const linkElement = (link) => {
 const submitElement = () => {
   const button = document.createElement('input');
   button.type = 'submit';
-  button.value = 'Confirm';
+  button.value = '+';
+  button.title = 'Add link';
   button.classList.add('edit__button');
   return button;
 };
@@ -60,10 +61,10 @@ export const editForm = ({name, link, id}) => {
   form.dataset.id = id;
   form.classList.add('js--confirm-edit', 'edit');
   form.appendChild(
-    label(nameElement(name), 'Name: ', 'edit__title')
+    label(linkElement(link), 'link: ', 'edit__link')
   );
   form.appendChild(
-    label(linkElement(link), 'Link: ', 'edit__link')
+    label(nameElement(name), 'name: ', 'edit__title')
   );
   form.appendChild(submitElement());
   return form;

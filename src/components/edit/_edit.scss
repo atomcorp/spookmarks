@@ -14,8 +14,15 @@
 }
 
 .edit__link {
+  font-size: 1.5rem;
   input {
-    padding: 2px 5px;
+    padding: 12px;
+    border: 0;
+    margin: 0 0 3px;
+    min-width: 300px;
+    &:focus {
+      outline: 1px dotted;
+    }
   }
   @supports (display: grid) {
     grid-area: link;
@@ -23,13 +30,12 @@
 }
 
 .edit__title {
+  font-size: 1.5rem;
   input {
-    padding: 2px 5px;
+    padding: 6px 12px;
+    border: 0;
+    min-width: 300px;
   }
-  // padding: 10px 5px;
-  // width: 100%;
-  // text-align: center;
-  // border: 1px solid #eee;
   @supports (display: grid) {
     grid-area: name;
   }
@@ -40,9 +46,10 @@
   text-transform: uppercase;
   padding: 0 30px;
   cursor: pointer;
-  background: #ff9800;
-  // border: 3px solid #eee;
-  // font-size: 6rem;
+  background: $highlight-colour;
+  background: radial-gradient(ellipse at center, $highlight-colour, darken($highlight-colour, 5%));
+  margin: 0 0 0 3px;
+  font-size: 5rem;
   @supports (display: grid) {
     grid-area: button;
   }
