@@ -52,6 +52,7 @@ const pagerListener = (pager) => {
           ? Number(e.target.dataset.id)
           : getCurrentPage()
       );
+      refreshPager();
       updateListInDom();
     }
   });
@@ -82,10 +83,14 @@ export const checkPagerOnItemDelete = () => {
       CHANGE_PAGE,
       currentPages
     );
-    const pager = document.querySelector('.js--pager');
-    clearPager(pager);
-    appendPager(pager);
+    refreshPager();
   }
+};
+
+export const refreshPager = () => {
+  const pager = document.querySelector('.js--pager');
+  clearPager(pager);
+  appendPager(pager);
 };
 
 /**

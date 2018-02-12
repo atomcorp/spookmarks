@@ -6,7 +6,7 @@ import {
   NEXT_PAGE,
   PREV_PAGE,
 } from '../../store/types.js';
-
+import { store } from '../../store/store.js';
 
 /**
  * Return button
@@ -21,6 +21,7 @@ const button = (text, type, id) => {
   button.dataset.type = type;
   if (id) {
     button.dataset.id = id;
+    store.access().page === id ? button.classList.add('active') : null;
   }
   button.classList.add('js--new-page', 'pager__button');
   return button;
