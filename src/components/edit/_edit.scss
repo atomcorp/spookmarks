@@ -1,0 +1,49 @@
+.edit {
+  width: 100%;
+  background: #dbded7;
+  padding: 10px 0;
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    grid-template-areas: 
+      "link button"
+      "name button"; 
+  }
+}
+
+.edit__link {
+  input {
+    padding: 2px 5px;
+  }
+  @supports (display: grid) {
+    grid-area: link;
+  }
+}
+
+.edit__title {
+  input {
+    padding: 2px 5px;
+  }
+  // padding: 10px 5px;
+  // width: 100%;
+  // text-align: center;
+  // border: 1px solid #eee;
+  @supports (display: grid) {
+    grid-area: name;
+  }
+}
+
+.edit__button {
+  border: 0;
+  text-transform: uppercase;
+  padding: 0 30px;
+  cursor: pointer;
+  background: #ff9800;
+  // border: 3px solid #eee;
+  // font-size: 6rem;
+  @supports (display: grid) {
+    grid-area: button;
+  }
+}

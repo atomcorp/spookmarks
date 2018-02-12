@@ -22,7 +22,7 @@ const linkElement = ({ name, link, id }) => {
 const deleteButton = (id) => {
   const button = document.createElement('button');
   button.classList.add('link__delete', 'js--delete');
-  button.innerText = '🗙';
+  button.innerText = 'delete';
   button.dataset.id = id;
   return button;
 };
@@ -35,7 +35,7 @@ const deleteButton = (id) => {
 const editButton = (id) => {
   const button = document.createElement('button');
   button.classList.add('link__edit', 'js--edit');
-  button.innerText = '✎';
+  button.innerText = 'edit';
   button.dataset.id = id;
   return button;
 };
@@ -69,8 +69,8 @@ const linkContainer = (
   const div = document.createElement('div');
   div.classList.add('link');
   div.appendChild(link);
-  div.appendChild(deleteEl);
   div.appendChild(edit);
+  div.appendChild(deleteEl);
   if (editable) {
     div.appendChild(editable);
   }

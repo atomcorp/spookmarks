@@ -1,3 +1,49 @@
 .link {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  background: #f7f8f6;
+  margin: 0 0 20px;
+  @include tablet {
+    margin: 0 0 40px;
+  }
+}
+
+.link__a {
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: #4575d8;
+  @include tablet {
+    font-size: 3rem;
+    padding: 20px 40px;
+  }
+  @include laptop {
+    font-size: 4rem;
+  }
+  @include laptop {
+    font-size: 6rem;
+  }
+}
+
+.link__delete {
+  cursor: pointer;
+  margin: 0 5px 20px;
+  background: transparent;
+  font-size: 1.5rem;
+  border: 0;
+  border-bottom: 1px solid;
+  color: red;
+  padding: 0;
+}
+
+.link__edit {
+  cursor: pointer;
+  margin: 0 5px 20px;
+  background: transparent;
+  font-size: 1.5rem;
+  border: 0;
+  border-bottom: 1px solid;
+  padding: 0;
 }

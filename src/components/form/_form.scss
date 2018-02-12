@@ -1,10 +1,11 @@
 .form {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   background: #e0ddbf;
   padding: 20px 30px;
   @include tablet {
     padding: 40px 60px;
+    margin: 0 auto 60px;
   }
   @supports (display: grid) {
     display: grid;

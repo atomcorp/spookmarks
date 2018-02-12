@@ -3,6 +3,14 @@
   links and titles
 */
 
+const label = (formElement, text, className) => {
+  const label = document.createElement('label');
+  label.innerText = text;
+  label.appendChild(formElement);
+  label.classList.add(className);
+  return label;
+};
+
 /**
  * Create element for link name
  * @param {string} name
@@ -35,6 +43,7 @@ const submitElement = () => {
   const button = document.createElement('input');
   button.type = 'submit';
   button.value = 'Confirm';
+  button.classList.add('edit__button');
   return button;
 };
 
@@ -49,9 +58,13 @@ const submitElement = () => {
 export const editForm = ({name, link, id}) => {
   const form = document.createElement('form');
   form.dataset.id = id;
-  form.classList.add('js--confirm-edit');
-  form.appendChild(nameElement(name));
-  form.appendChild(linkElement(link));
+  form.classList.add('js--confirm-edit', 'edit');
+  form.appendChild(
+    label(nameElement(name), 'Name: ', 'edit__title')
+  );
+  form.appendChild(
+    label(linkElement(link), 'Link: ', 'edit__link')
+  );
   form.appendChild(submitElement());
   return form;
 };
