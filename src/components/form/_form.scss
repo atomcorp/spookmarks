@@ -1,11 +1,16 @@
 .form {
   max-width: 800px;
   margin: 0 auto 20px;
-  background: #e0ddbf;
+  background: #e7e4de;
   padding: 20px 30px;
+  box-shadow: 0 4px 8px #e7e4de4d;
   @include tablet {
     padding: 40px 60px;
     margin: 0 auto 60px;
+  }
+  @include desktop {
+    max-width: 1200px;
+    margin: 0 auto 120px;
   }
   @supports (display: grid) {
     display: grid;
@@ -17,26 +22,38 @@
   }
 }
 
-
-
-.form__link {
-  padding: 20px 10px;
+@mixin field() {
   width: 100%;
   text-align: center;
-  border: 1px solid #eee;
+  border: 0;
+  background: #c9c6c6;
+  transition: background 0.4s ease-in-out;
+  &:focus,
+  &:hover {
+    background: lighten(#c9c6c6, 2%);
+  }
+  &:focus {
+    outline: 1px dotted;
+  }
+}
+
+.form__link {
+  @include field;
+  padding: 20px 10px;
+  margin: 0 0 3px;
   @include tablet {
     font-size: 3rem;
   }
   @supports (display: grid) {
     grid-area: link;
   }
+
 }
 
 .form__title {
+  @include field;
   padding: 10px 5px;
-  width: 100%;
-  text-align: center;
-  border: 1px solid #eee;
+  border: 0;
   @supports (display: grid) {
     grid-area: name;
   }
@@ -46,9 +63,11 @@
   border: 0;
   padding: 0 30px;
   cursor: pointer;
-  background: #ff9800;
-  border: 3px solid #eee;
-  font-size: 6rem;
+  background: $highlight-colour;
+  background: radial-gradient(ellipse at center, $highlight-colour, darken($highlight-colour, 5%));
+  border: 0;
+  margin-left: 3px;
+  font-size: 9rem;
   @supports (display: grid) {
     grid-area: button;
   }

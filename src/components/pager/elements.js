@@ -22,7 +22,7 @@ const button = (text, type, id) => {
   if (id) {
     button.dataset.id = id;
   }
-  button.classList.add('js--new-page');
+  button.classList.add('js--new-page', 'pager__button');
   return button;
 };
 

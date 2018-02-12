@@ -3,10 +3,18 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  background: #f7f8f6;
+  background: #2a2c29;
   margin: 0 0 20px;
+  transition: box-shadow 0.4s;
+  box-shadow: 0 2px 8px rgba(214, 144, 0, 0.2);
   @include tablet {
     margin: 0 0 40px;
+  }
+  &:hover {
+    box-shadow: 0 4px 12px rgba(214, 144, 0, 0.2), 4px 4px 16px rgba(214, 144, 0, 0.2), -4px 4px 16px rgba(214, 144, 0, 0.2);
+    .link__a {
+      text-shadow: 0 1px 8px rgba(255, 152, 0, 0.6);
+    }
   }
 }
 
@@ -14,7 +22,9 @@
   width: 100%;
   text-align: center;
   text-decoration: none;
-  color: #4575d8;
+  color: $highlight-colour;
+  text-shadow: 0;
+  transition: text-shadow 0.4s;
   @include tablet {
     font-size: 3rem;
     padding: 20px 40px;
@@ -25,6 +35,10 @@
   @include laptop {
     font-size: 6rem;
   }
+  &:visited {
+    color: $highlight-colour;
+  }
+  
 }
 
 .link__delete {
@@ -34,7 +48,7 @@
   font-size: 1.5rem;
   border: 0;
   border-bottom: 1px solid;
-  color: red;
+  color: tomato;
   padding: 0;
 }
 
@@ -46,4 +60,5 @@
   border: 0;
   border-bottom: 1px solid;
   padding: 0;
+  color: DarkCyan;
 }
