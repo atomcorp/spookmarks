@@ -54,6 +54,7 @@ const pagerListener = (pager) => {
       );
       refreshPager();
       updateListInDom();
+      window.scrollTo(0, 0);
     }
   });
 };

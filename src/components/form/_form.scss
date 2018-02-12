@@ -41,6 +41,7 @@
   @include field;
   padding: 20px 10px;
   margin: 0 0 3px;
+  font-size: 1.5rem;
   @include tablet {
     font-size: 3rem;
   }
@@ -54,6 +55,10 @@
   @include field;
   padding: 10px 5px;
   border: 0;
+  font-size: 1.3rem;
+  @include tablet {
+    font-size: 2rem;
+  }
   @supports (display: grid) {
     grid-area: name;
   }
@@ -61,14 +66,17 @@
 
 .form__button {
   border: 0;
-  padding: 0 30px;
+  padding: 0 15px;
   cursor: pointer;
   background: $highlight-colour;
   background: radial-gradient(ellipse at center, $highlight-colour, darken($highlight-colour, 5%));
   border: 0;
   margin-left: 3px;
-  font-size: 9rem;
+  font-size: 4rem;
   @supports (display: grid) {
     grid-area: button;
+  }
+  @include tablet {
+    font-size: 9rem;
   }
 }

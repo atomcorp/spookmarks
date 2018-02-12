@@ -4,20 +4,25 @@
 }
 
 .pager__button {
-  font-size: 6rem;
+  font-size: 2rem;
   cursor: pointer;
-  margin: 0 20px;
+  margin: 0 10px;
   background: transparent;
   border: 0;
   color: $highlight-colour;
   border-bottom: 3px solid transparent;
   transition: text-shadow 0.4s ease-in-out;
   text-shadow: 0 2px 4px rgba(214, 144, 0, 0.2), 2px 2px 6px rgba(214, 144, 0, 0.2), -2px 2px 6px rgba(214, 144, 0, 0.2);
+  padding: 0 5px 5px; 
   &:hover {
     text-shadow: 0 4px 12px rgba(214, 144, 0, 0.2), 4px 4px 16px rgba(214, 144, 0, 0.2), -4px 4px 16px rgba(214, 144, 0, 0.2);
   }
   &.active {
     border-bottom: 3px solid $highlight-colour;
     text-shadow: 0 4px 12px rgba(214, 144, 0, 0.2), 4px 4px 16px rgba(214, 144, 0, 0.2), -4px 4px 16px rgba(214, 144, 0, 0.2);    
+  }
+  @include laptop {
+    font-size: 6rem;
+    margin: 0 20px;
   }
 }

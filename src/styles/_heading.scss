@@ -14,8 +14,8 @@
 
 .heading__name {
   text-transform: uppercase;
-  font-size: 3rem;
-  margin: 0;
+  font-size: 4rem;
+  margin: 0 0 10px;
   font-family: 'Permanent Marker', 'Roboto Mono', monospace, monospace;
   color: $highlight-colour;
   animation: pulse ease-in-out 2s infinite alternate; 
@@ -45,4 +45,13 @@
 .heading__strapline {
   font-weight: 400;
   margin: 0;
+  color: #e49d33;
+  font-size: 2rem;
+  text-align: center;
+  @include laptop {
+    font-size: 3rem;
+  }
+  @include desktop {
+    font-size: 4rem;
+  }
 }

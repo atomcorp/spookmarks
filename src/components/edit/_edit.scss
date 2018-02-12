@@ -20,12 +20,20 @@
     border: 0;
     margin: 0 0 3px;
     min-width: 300px;
+    width: 100%;
     &:focus {
       outline: 1px dotted;
     }
   }
   @supports (display: grid) {
     grid-area: link;
+  }
+  @include tablet {
+    display: flex;
+    align-items: center;
+    input {
+      margin: 0 0 3px 5px;
+    }
   }
 }
 
@@ -35,22 +43,35 @@
     padding: 6px 12px;
     border: 0;
     min-width: 300px;
+    width: 100%;
   }
   @supports (display: grid) {
     grid-area: name;
+  }
+  @include tablet {
+    display: flex;
+    align-items: center;
+    input {
+      margin: 0 0 0 5px;
+    }
   }
 }
 
 .edit__button {
   border: 0;
   text-transform: uppercase;
-  padding: 0 30px;
+  padding: 0 15px;
   cursor: pointer;
   background: $highlight-colour;
   background: radial-gradient(ellipse at center, $highlight-colour, darken($highlight-colour, 5%));
   margin: 0 0 0 3px;
   font-size: 5rem;
+  align-self: center;
   @supports (display: grid) {
     grid-area: button;
+  }
+  @include tablet {
+    padding: 0 30px;
+    align-self: stretch;
   }
 }

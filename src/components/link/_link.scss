@@ -26,6 +26,7 @@
   text-shadow: 0;
   transition: text-shadow 0.4s;
   word-wrap: break-word;
+  margin: 10px 0;
   @include tablet {
     font-size: 3rem;
     padding: 20px 40px;
@@ -33,7 +34,7 @@
   @include laptop {
     font-size: 4rem;
   }
-  @include laptop {
+  @include desktop {
     font-size: 6rem;
   }
   &:visited {
