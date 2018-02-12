@@ -18,6 +18,10 @@
 
 .added__message {
   margin: 0 0 40px;
+  font-size: 1.5rem;
+  @include tablet {
+    font-size: 2rem;
+  }
 }
 
 .added__links {
@@ -28,21 +32,35 @@
 }
 
 .added__title {
-  font-size: 6rem;
+  font-size: 3rem;
   h3 {
     margin: 0;
+  }
+  @include tablet {
+    font-size: 4rem;
+  }
+  @include laptop {
+    font-size: 6rem;
   }
 }
 
 .added__link {
-  font-size: 4rem;
+  font-size: 3rem;
   word-wrap: break-word;
   margin-bottom: 5px;
   display: block;
+  color: inherit;
+  text-decoration: none;
+  @include tablet {
+    font-size: 4rem;
+  }
 }
 
 .added__name {
-  font-size: 3rem;
+  font-size: 2rem;
+  @include tablet {
+    font-size: 3rem;
+  }
 }
 
 .added__back {
