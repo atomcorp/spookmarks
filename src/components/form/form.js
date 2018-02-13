@@ -4,11 +4,12 @@ import {
   setItemToSession,
   setStoreToStorage,
 } from '../../store/browser-storage.js';
-// import { sentRequestToUrl } from './validation.js';
+import { tryURL } from './validation.js';
 
 const form = document.querySelector('.form');
 const title = document.querySelector('.js--title');
 const link = document.querySelector('.js--link');
+const errors = document.querySelector('.js--errors');
 
 /**
  * Allows user to submit new link if valid
@@ -18,6 +19,18 @@ const link = document.querySelector('.js--link');
 const handleSubmit = (e) => {
   e.preventDefault();
   // TODO: add validation
+  // formIsValid();
+  const tryUrl = tryURL(link.value);
+  if (!tryUrl.valid) {
+    errors.classList.add('js--active');
+    errors.innerText = tryUrl.text;
+  } else {
+    errors.classList.remove('js--active');
+    formIsValid();
+  }
+};
+
+const formIsValid = () => {
   store.updateList(ADD_TO_LIST, {
     name: title.value,
     link: link.value,
@@ -26,8 +39,8 @@ const handleSubmit = (e) => {
     name: title.value,
     link: link.value,
   });
-  clearForm();
   setStoreToStorage(store.access());
+  clearForm();
   window.location.href = '/added/';
 };
 
