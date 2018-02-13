@@ -1,7 +1,6 @@
 /**
- * Pull this out of form.js as it listeners can
- * potentially be added on elements that don't exist on page
- * This tidies up behavoir
+ * Adds listeners for the various clicks that happen in the list div,
+ * such as editing and deleting link items
  */
 import {
   REMOVE_FROM_LIST,

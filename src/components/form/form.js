@@ -1,3 +1,7 @@
+/**
+ * Manages the form where users input links
+ */
+
 import { store } from '../../store/store.js';
 import { ADD_TO_LIST } from '../../store/types.js';
 import {

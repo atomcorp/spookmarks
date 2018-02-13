@@ -8,9 +8,9 @@ Tasks:
   ✔ shakey business when using dom elements that don't exist on the /added page @done(18-02-11 21:27)
   ✘ add form and list elements with js? @cancelled(18-02-11 19:51)
   ✘ What's your list about section? hip hop youtube links? @cancelled(18-02-12 21:58)
-  ☐ load dummy data button
-  ☐ clear data button
-  ☐ if list empty?
+  ✔ load dummy data button @done(18-02-13 00:56)
+  ✔ clear data button @done(18-02-13 00:56)
+  ✔ if list empty? @done(18-02-13 00:56)
   ✔ pager doesn't show whole list @bug @done(18-02-11 19:48)
   ✔ pager (probably) doesn't update when adding new items @done(18-02-11 19:48)
   ✘ should integrate pager and list state in store better, so you can update both at the same time @cancelled(18-02-12 21:58)

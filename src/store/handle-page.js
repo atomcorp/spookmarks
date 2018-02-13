@@ -1,3 +1,7 @@
+/**
+ * This manages the different type of actions a page can recieve
+ */
+
 import {
   CHANGE_PAGE,
   PREV_PAGE,

@@ -1,3 +1,8 @@
+/**
+ * Creates the link (know as item everywhere else) that
+ * is placed in the dom list
+ */
+
 import { editForm } from '../edit/edit.js';
 
 /**

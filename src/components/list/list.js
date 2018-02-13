@@ -1,5 +1,5 @@
 /*
-  This essentially covers what list items
+  This appends what list items
   we display on the page
 */
 import { store } from '../../store/store.js';

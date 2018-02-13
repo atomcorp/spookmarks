@@ -1,3 +1,7 @@
+/**
+ * Helpers for managing putting and retrieving data
+ * from the browsers storage
+ */
 import initialData from './initial-data.js';
 
 /**
