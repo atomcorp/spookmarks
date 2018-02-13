@@ -10,6 +10,7 @@ import { pageHandler } from './handle-page.js';
 import {
   getStoreFromStorage,
 } from './browser-storage.js';
+import initialData from './initial-data.js';
 
 /**
  * Holds the app state
@@ -36,6 +37,15 @@ const storeHandler = (data) => {
       }
     );
   };
+  const reset = () => {
+    store = Object.assign({}, {
+      list: [],
+      page: 1
+    });
+  };
+  const loadDummies = () => {
+    store = Object.assign({}, initialData);
+  };
   const getItemFromList = (id) => {
     return getFromList(id, store.list);
   };
@@ -47,6 +57,8 @@ const storeHandler = (data) => {
     updatePage: updatePage,
     access: access,
     getItemFromList: getItemFromList,
+    reset: reset,
+    loadDummies: loadDummies,
   };
 };
 

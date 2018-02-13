@@ -1,5 +1,4 @@
- @import url('https://fonts.googleapis.com/css?family=Caveat+Brush');
-  @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
 .heading {
   display: flex;
@@ -17,10 +16,10 @@
   font-size: 4rem;
   margin: 0 0 10px;
   font-family: 'Permanent Marker', 'Roboto Mono', monospace, monospace;
-  color: $highlight-colour;
   animation: pulse ease-in-out 2s infinite alternate; 
   a {
     text-decoration: none;
+    color: $highlight-colour;
   }
   @include tablet {
     font-size: 6rem;
@@ -48,6 +47,7 @@
   color: #e49d33;
   font-size: 2rem;
   text-align: center;
+  animation: pulse ease-in-out 2s infinite alternate;
   @include laptop {
     font-size: 3rem;
   }

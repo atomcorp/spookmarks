@@ -1,0 +1,12 @@
+.debug {
+
+  @include tablet {
+    display: flex;
+    justify-content: center;
+  }
+  & > * {
+    cursor: pointer;
+    margin: 20px;
+    text-align: center;
+  }
+}

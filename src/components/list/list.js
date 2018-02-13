@@ -17,6 +17,12 @@ const list = document.querySelector('.js--list');
  */
 const appendItems = (items = []) => {
   clearItems();
+  if (!items.length) {
+    const emptyMessage = document.createElement('div');
+    emptyMessage.classList.add('list__empty');
+    emptyMessage.innerText = 'You have no bookmarks :(';
+    list.appendChild(emptyMessage);
+  }
   // doc.fragment is better performance apparently
   // https://developer.mozilla.org/en-US/docs/Web/API/Document/createDocumentFragment
   const fragment = document.createDocumentFragment();

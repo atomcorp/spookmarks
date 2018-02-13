@@ -1,7 +1,7 @@
 Tasks:
   ✔ need to give appendItems exactly what list items to show @done(18-02-11 19:50)
   ✔ refactor submit handler so it can do all the jobs that will get thrown at it @done(18-02-11 13:10)
-  ☐ validation
+  ✔ validation @done(18-02-13 00:10)
   ✔ why is he order odd when adding items? @done(18-02-10 19:11)
   ✘ have to add a way to set default page number when using store @cancelled(18-02-11 19:50)
   ✔ add a check of stores pageNumber to pass to list rendering @done(18-02-11 19:50)
@@ -10,6 +10,7 @@ Tasks:
   ✘ What's your list about section? hip hop youtube links? @cancelled(18-02-12 21:58)
   ☐ load dummy data button
   ☐ clear data button
+  ☐ if list empty?
   ✔ pager doesn't show whole list @bug @done(18-02-11 19:48)
   ✔ pager (probably) doesn't update when adding new items @done(18-02-11 19:48)
   ✘ should integrate pager and list state in store better, so you can update both at the same time @cancelled(18-02-12 21:58)

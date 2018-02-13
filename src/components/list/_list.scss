@@ -13,3 +13,11 @@
   text-align: center;
   margin: 0 auto 30px;
 }
+
+.list__empty {
+  text-align: center;
+  @include tablet {
+    font-size: 4rem;
+    padding: 40px;
+  } 
+}

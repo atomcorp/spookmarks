@@ -15,10 +15,11 @@
   @supports (display: grid) {
     display: grid;
     grid-template-columns: 1fr auto;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: 1fr auto auto;
     grid-template-areas: 
       "link button"
-      "name button"; 
+      "name button"
+      "error error"; 
   }
 }
 
@@ -88,6 +89,9 @@
   margin: 0 auto;
   padding: 20px 0 0;
   display: none;
+  @supports (display: grid) {
+    grid-area: error;
+  }
   &.js--active {
     display: block;
   }
