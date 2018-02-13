@@ -11,7 +11,11 @@ module.exports = merge(common, {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: ["css-loader", "sass-loader"]
+          use: [
+            { loader: 'css-loader', options: { sourceMap: false, minimize: true } },
+            { loader: 'postcss-loader', options: { sourceMap: false, minimize: true } },
+            { loader: 'sass-loader', options: { sourceMap: false, minimize: true } }
+          ]
         })
       }
     ]

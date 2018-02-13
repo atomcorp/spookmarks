@@ -20,18 +20,5 @@ module.exports = {
       template: './src/templates/added.html'
     }),
     require('autoprefixer')
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          { loader: 'style-loader', options: { sourceMap: true } },
-          { loader: 'css-loader', options: { sourceMap: true } },
-          { loader: 'postcss-loader', options: { sourceMap: true } },
-          { loader: 'sass-loader', options: { sourceMap: true } }
-        ]
-      }
-    ]
-  }
+  ]
 };
