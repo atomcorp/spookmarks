@@ -11,11 +11,11 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['public']),
     new HtmlWebpackPlugin({
-      title: 'Bookmark',
+      title: 'Spookmarks',
       template: './src/templates/index.html'
     }),
     new HtmlWebpackPlugin({
-      title: 'Added',
+      title: 'Spookmarks - Added!',
       filename: 'added/index.html',
       template: './src/templates/added.html'
     }),
