@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>
-    <%= htmlWebpackPlugin.options.title %>
-  </title>
-</head>
-<body>
-  <div class="content">
-    <div class="heading">
-      <h1 class="heading__name">
-        <a href="/">Spookmarks</a>
-      </h1>
-      <h2 class="heading__strapline">👻 + 🔖 = Bookmarking for Phantoms</h2>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      <%= htmlWebpackPlugin.options.title %>
+    </title>
+  </head>
+  <body>
+    <div class="content">
+      <div class="heading">
+        <h1 class="heading__name">
+          <a href="/">Spookmarks</a>
+        </h1>
+        <h2 class="heading__strapline">👻 + 🔖 = Bookmarking for Phantoms</h2>
+      </div>
+      <form class="form js--form">
+        <input class="form__link js--link" type="text" placeholder="Add a link!">
+        <input class="form__title js--title" type="text" placeholder="Add a Title! (optional)">
+        <button class="form__button form__button" type="submit" value="" title="Add bookmark">
+          <span>+</span>
+        </button>
+        <div class="js--errors errors">Errors</div>
+      </form>
+      <div class="list__title">your bookmarks:</div>
+      <div class="list js--list"></div>
+      <div class="js--pager pager"></div>
     </div>
-    <form class="form js--form">
-      <input class="form__link js--link" type="text" placeholder="Add a link!">
-      <input class="form__title js--title" type="text" placeholder="Add a Title! (optional)">
-      <button class="form__button form__button" type="submit" value="" title="Add bookmark">
-        <span>➕</span>
-      </button>
-      <div class="js--errors errors">Errors</div>
-    </form>
-    <div class="list__title">your bookmarks:</div>
-    <div class="list js--list"></div>
-    <div class="js--pager pager"></div>
-  </div>
-  <div class="debug">
-    <div class="js--clear">Clear all links</div>
-    <div class="js--dummy">Load dummy data</div>
-  </div>
-</body>
+    <div class="debug">
+      <div class="js--clear">Clear all links</div>
+      <div class="js--dummy">Load dummy data</div>
+    </div>
+  </body>
 </html>
