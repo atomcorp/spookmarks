@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>
-  <%= htmlWebpackPlugin.options.title %>
-</title>
-<div class="heading">
-  <h1 class="heading__name">
-    <a href="/">Spookmarks</a>
-  </h1>
-  <h2 class="heading__strapline">👻 + 🔖 = Bookmarking for Phantoms</h2>
-</div>
-<div class="added">
-  <div class="added__title">
-    <h3>Great job.</h3>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+</head>
+<body>
+  <div class="heading">
+    <h1 class="heading__name">
+      <a href="/">Spookmarks</a>
+    </h1>
+    <h2 class="heading__strapline">👻 + 🔖 = Bookmarking for Phantoms</h2>
   </div>
-  <div class="added__message">
-    <p>You have (probably) succesfully saved a valid link that definitely exists.</p>
-    <p>Take a look at your hard work down here 👇</p>
+  <div class="added">
+    <div class="added__title">
+      <h3>Great job.</h3>
+    </div>
+    <div class="added__message">
+      <p>You have (probably) succesfully saved a valid link that definitely exists.</p>
+      <p>Take a look at your hard work down here 👇</p>
+    </div>
+    <div class="added__confirmation">
+      <div class="js--added added__links"></div>
+    </div>
+    <a class="added__back" href="/">Go back to your list</a>
   </div>
-  <div class="added__confirmation">
-    <div class="js--added added__links"></div>
-  </div>
-  <a class="added__back" href="/">Go back to your list</a>
-</div>
+</body>
+</html>
